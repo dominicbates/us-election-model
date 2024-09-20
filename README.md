@@ -20,5 +20,15 @@ $$y_{s,t} \sim \mathcal{N}(p_{s,t}, \sigma_{vote}^2)$$
 
 The idea here is to account for any other random errors in the results (not correlated across states). In Logistic regression you would often use something like bernoulli error, however since the error to counts will be tiny here, the thing we really want to model are werid messy systematic effects not captured by other components of the model. The normal distribution can capture this.
 
+## Data
+
+`data/` contains historical polling and results data, which I have cleaned up for use in a model: 
+- Historical polling data is scraped from [this wikipedia article](https://en.wikipedia.org/wiki/Polling_for_United_States_presidential_elections).
+- State-level results are extracted from [Harvard's U.S. President 1976-2020 dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/42MVDX&version=8.0). (Try [this link](https://dataverse.harvard.edu/dataverse/medsl_election_returns) incase the previous dataset changes post-2024 election)
+
+In `data/`:
+- `data/historical_polling_oct_nov.csv` contains the average of all october and november national polls for each year (after removing independants and rescaling)
+- `data/historical_state_results.csv` contains one row per state per year showing the republican and democrat actual votes share (also after removing independants and rescaling). Also contains some other useful information like canndidate names, state codes, total state votes etc.
+
 
 ## The Code

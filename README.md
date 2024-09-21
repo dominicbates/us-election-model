@@ -2,6 +2,14 @@
 
 The goal of this project is to create a *simple* model to predict state-level election results (and overall result) from polling data, while accounting for systematic errors across states and elections. The model incorporates both state-specific *fixed* effects and national-level *random* effects to capture deviations from expected vote shares.
 
+
+## Model Predictions
+
+Here we assume Kamala at 52% in the polls (and trump 48% - i.e. removing any 3rd party)
+
+<img src="./output/time_varying_model_21_sep_polls.png" alt="Alt text" width="500" style="display: block; margin: 0 auto;">
+
+
 ## The Model
 
 In this model, the predicted vote share for democrats, $\ p_{s,t}$ for state $s$ in election $t$ is given by:
@@ -19,6 +27,14 @@ The observed vote share $y_{s,t}$ is modeled using a normal distribution centere
 $$y_{s,t} \sim \mathcal{N}(p_{s,t}, \sigma_{vote}^2)$$
 
 The idea here is to account for any other random errors in the results (not correlated across states). In Logistic regression you would often use something like bernoulli error, however since the error to counts will be tiny here, the thing we really want to model are werid messy systematic effects not captured by other components of the model. The normal distribution can capture this.
+
+### Time-Varying Model
+
+I also implemented a time-varying model, which instead of just fitting $\alpha_s$, we also fit for a time-varying effect (e.g. states becoming more democrat or republican over time), so this becomes $\alpha_{s,t} = \alpha_{s,0} + \delta_{s} \cdot t$, so the model becomes:
+
+$$p_{s,t} = \text{logistic}(\text{logit}(X_{t}) + \alpha_{s,0} + \delta_{s} \cdot t + \gamma_t)$$
+
+where $\delta_{s,t}$ represents the strength of the increase or decrease in $\alpha$ over time. All other components of the mmodel remain the same. This is the model I currently am using in production, since it appears to produce more realistic esitmates, and it doesn't seem like I have any issues with too many parameters.
 
 ## Data
 

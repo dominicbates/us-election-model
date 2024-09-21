@@ -40,7 +40,7 @@ where $\delta_{s,t}$ represents the strength of the increase or decrease in $\al
 
 The model is trained on historical national polling data (as its input) and fit to historical vote shares in each state. 
 
-We fit only from 1976 for a few reasons. Partly, this is a point we can easily extract reliable data, but also, shortly before this not all states could vote (e.g. Alaska, Hawaii), and additionally populations might not well represent the current voter base. We feel this is a sensible Compromise between data size and relevance. We also remove 1992 and 1996 due to a large number of votes for a 3rd candidate here which significantly complicates the voting. This leaves us with 10 election years. 
+We fit only from 1976 onwards for a few reasons. Partly, this is a point we can easily extract reliable data, but also, shortly before this not all states could vote (e.g. Alaska, Hawaii), and additionally populations might not well represent the current voter base. We feel this is a sensible Compromise between data size and relevance. We also remove 1992 and 1996 due to a large number of votes for a 3rd candidate here which significantly complicates the voting. This leaves us with 10 election years. 
 
 `data/` contains historical polling and results data, which I have cleaned up for use in a model: 
 - Historical polling data is scraped from [this wikipedia article](https://en.wikipedia.org/wiki/Polling_for_United_States_presidential_elections).

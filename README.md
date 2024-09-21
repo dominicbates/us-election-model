@@ -18,7 +18,7 @@ $$p_{s,t} = \text{logistic}(\text{logit}(X_{t}) + \alpha_s + \gamma_t)$$
 
 where $X_{t}$ represents the national polling data for that year (e.g. $X_{t} = 54$%), $\alpha_s$ is the state-specific voting propensity (fit over many years), and $\gamma_t$ is the national-level polling error for election $t$.
 
-So essentially we assume the national polling data will represent the outcome for each state (i.e. if  $\alpha_s$ + $\gamma_t$ are set to zero, the preddiction is just the same as the input polls), and then adjust this with our fixed and random effects to make our state-level prediction:
+So essentially we assume the national polling data will represent the outcome for each state (i.e. if  $\alpha_s$ + $\gamma_t$ are set to zero, then $p_{s,t}$ just returns the input polls, $X_{t}$). We then adjust this with our fixed and random effects to make our state-level prediction:
 - The state-specific effect $\alpha_s$ is a **fixed effect** (i.e. is assumed to be constant over all years). This captures the propensity of states to vote more democrat or republican (e.g. for Texas this will skew republican and California skew democrat).
 - The polling error $\gamma_t$ is assumed to be a normally distributed **random effect** (not state specific), hence this changes each year. This should capture whether polls are systematically wrong for a particular year.
 
@@ -34,7 +34,7 @@ I also implemented a time-varying model, which instead of just fitting $\alpha_s
 
 $$p_{s,t} = \text{logistic}(\text{logit}(X_{t}) + \alpha_{s,0} + \delta_{s} \cdot t + \gamma_t)$$
 
-where $\delta_{s,t}$ represents the strength of the increase or decrease in $\alpha$ over time. All other components of the mmodel remain the same. This is the model I currently am using in production, since it appears to produce more realistic esitmates, and it doesn't seem like I have any issues with too many parameters.
+where $\delta_{s,t}$ represents the strength of the increase or decrease in $\alpha$ over time. All other components of the model remain the same. This is the model I currently am using in production, since it appears to produce more realistic esitmates, and it doesn't seem like I have any issues with too many parameters.
 
 ## Data
 

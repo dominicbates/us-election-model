@@ -36,6 +36,13 @@ $$p_{s,t} = \text{logistic}(\text{logit}(X_{t}) + \alpha_{s,0} + \delta_{s} \cdo
 
 where $\delta_{s,t}$ represents the strength of the increase or decrease in $\alpha$ over time. All other components of the model remain the same. This is the model I currently am using in production, since it appears to produce more realistic esitmates, and it doesn't seem like I have any issues with too many parameters.
 
+### Generating Predictions
+
+Given out fitted model, we can sample from our posteriors to generate possible election results. To generate our full results, we do this many times ($/sim 10,000$), and compute how many times each state is won by each candidate. 
+
+To generate overall win probabilities, we work out electoral college counts for each candidate in each draw, and compute the fraction of times each candidate wins in the electoral college. 
+
+
 ## Data
 
 The model is trained on historical national polling data (as its input) and fit to historical vote shares in each state. 

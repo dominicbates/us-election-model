@@ -1,6 +1,6 @@
 # us-election-model
 
-The goal of this project is to create a *simple* model to predict state-level election results (and overall result) from polling data, while accounting for systematic errors across states and elections. The model incorporates both state-specific *fixed* effects and national-level *random* effects to capture deviations from expected vote shares.
+The goal of this project is to create a *simple*, robust model to predict state-level election results (and overall result) from polling data, while accounting for systematic errors across states and elections. The model incorporates both state-specific *fixed* effects and national-level *random* effects to capture deviations from expected vote shares.
 
 
 ## Model Predictions

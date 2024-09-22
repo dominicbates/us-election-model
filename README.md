@@ -1,6 +1,6 @@
 # us-election-model
 
-The goal of this project is to create a *simple*, robust model to predict state-level election results (and overall result) from polling data, while accounting for systematic errors across states and elections. The model incorporates both state-specific *fixed* effects and national-level *random* effects to capture deviations from expected vote shares.
+The goal of this project is to create a *simple*, robust model to predict state-level presidential election results (and overall result) from polling data, while accounting for systematic errors across states and elections. The model incorporates both state-specific *fixed* effects and national-level *random* effects to capture deviations from expected vote shares.
 
 
 ## Model Predictions
@@ -40,7 +40,7 @@ where $\delta_{s,t}$ represents the strength of the increase or decrease in $\al
 
 Given out fitted model, we can sample from our posteriors to generate possible election results. To generate our full results, we do this many times ($\sim 10,000$), and compute how many times each state is won by each candidate. 
 
-To generate overall win probabilities, we work out electoral college counts for each candidate in each draw, and compute the fraction of times each candidate wins in the electoral college. 
+To generate overall win probabilities, we work out electoral college votes for each candidate in each draw, and compute the fraction of times each candidate wins the presidential election. 
 
 
 ## Data

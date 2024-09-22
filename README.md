@@ -38,7 +38,7 @@ where $\delta_{s,t}$ represents the strength of the increase or decrease in $\al
 
 ### Generating Predictions
 
-Given out fitted model, we can sample from our posteriors to generate possible election results. To generate our full results, we do this many times ($/sim 10,000$), and compute how many times each state is won by each candidate. 
+Given out fitted model, we can sample from our posteriors to generate possible election results. To generate our full results, we do this many times ($\sim 10,000$), and compute how many times each state is won by each candidate. 
 
 To generate overall win probabilities, we work out electoral college counts for each candidate in each draw, and compute the fraction of times each candidate wins in the electoral college. 
 

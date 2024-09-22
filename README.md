@@ -12,7 +12,7 @@ Here we assume Kamala at 52% in the polls and trump 48% (this tracks the average
 
 ## The Model
 
-In this model, the predicted vote share for democrats, $p_{s,t}$ for state $s$ in election $t$ is given by:
+To model the vote share, we use hierarchical bayesian logistic regression. In our model, the predicted vote share for democrats, $p_{s,t}$ for state $s$ in election $t$ is given by:
      
 $$p_{s,t} = \text{logistic}(\text{logit}(X_{t}) + \alpha_s + \gamma_t)$$
 

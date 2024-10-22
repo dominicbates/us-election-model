@@ -7,7 +7,7 @@ The goal of this project is to create a *simple* model to predict state-level el
 
 Here we assume Kamala at 52% in the polls and trump 48% (this tracks the average of current polls, after rescaling to 100% total)
 
-<img src="./output/time_varying_model_21_sep_polls.png" alt="Alt text" width="500" style="display: block; margin: 0 auto;">
+<img src="./output/time_varying_model_23_oct_polls.png" alt="Alt text" width="500" style="display: block; margin: 0 auto;">
 
 
 ## The Model
@@ -49,6 +49,7 @@ We fit only from 1976 onwards for a few reasons. Partly, this is a point we can 
 In `data/`:
 - `data/historical_polling_oct_nov.csv` contains the average of all october and november national polls for each year (after removing independants and rescaling)
 - `data/historical_state_results.csv` contains one row per state per year showing the republican and democrat actual votes share (also after removing independants and rescaling). Also contains some other useful information like canndidate names, state codes, total state votes etc.
-
+- `data/electoral_college_votes.csv containg one row per state with the number of electoral college votes 
+allocated to each state`
 
 ## The Code

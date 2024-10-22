@@ -5,7 +5,7 @@ The goal of this project is to create a *simple*, robust model to predict state-
 
 ## Model Predictions
 
-Here we assume Kamala at 52% in the polls and trump 48% (this tracks the average of current polls, after rescaling to 100% total)
+Here we assume Kamala at 50.8% in the polls and trump 49.2% (this tracks the average of oct 23rd polls, after rescaling to 100% total)
 
 <img src="./output/time_varying_model_23_oct_polls.png" alt="Alt text" width="500" style="display: block; margin: 0 auto;">
 
